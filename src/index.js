@@ -133,19 +133,7 @@ app.post("/api/reports/:id/status", (req, res) => {
 });
 
 const port = Number(process.env.PORT || 3000);
-const ownerUserId = process.env.DISCORD_OWNER_USER_ID || "";
-
-void startDiscordBot({
-  ownerUserId,
-  onOwnerCommand: async (status, reportId, message) => {
-    const report = updateReportStatus(reportId, status);
-    if (!report) {
-      await message.reply(`Report ${reportId} not found.`);
-      return;
-    }
-    await message.reply(`Report ${reportId} marked as ${status}.`);
-  }
-});
+void startDiscordBot();
 
 app.listen(port, () => {
   console.log(`Nexus bug report hub listening on ${port}`);
