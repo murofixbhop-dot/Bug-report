@@ -1,0 +1,14 @@
+{
+  "name": "nexus-bug-report-hub",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Render-ready bug report hub for Nexus Launcher with Discord bot notifications.",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.19.3",
+    "express": "^4.21.2"
+  }
+}
